@@ -1,0 +1,9 @@
+name: 71_final_spikes_2500
+# Finalist: square columns at 2.5 km (4x the columns, finer texture).
+grid:
+  resolution_m: 2500
+render:
+  light:
+    preset: dusk_south
+geometry:
+  max_height: 6.5

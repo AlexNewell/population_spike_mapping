@@ -1,0 +1,4 @@
+name: 41_cam_mid
+render:
+  camera:
+    elevation_deg: 24

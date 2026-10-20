@@ -1,0 +1,29 @@
+name: 83_final_gold_bright_compressed
+# FINAL variant (feedback round 1): as 82, plus power 0.68 to compress the top peaks slightly.
+# Neighbours are shown as land silhouette only (no columns) to keep the focus on the US.
+grid:
+  resolution_m: 2500
+height:
+  transform: power
+  power: 0.68
+  neighbor_scale: 0.0
+geometry:
+  type: spikes
+  max_height: 7.0
+  spikes:
+    min_value: 50
+    footprint: 0.55
+render:
+  width: 3168
+  height: 792
+  samples: 256
+  palette: gold_navy_bright_mids
+  light:
+    preset: dusk_south
+    strength: 7
+  camera:
+    shift_x: -0.068
+    shift_y: 0.06
+  exposure: 1.7
+output:
+  dir: renders/final

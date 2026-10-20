@@ -1,0 +1,8 @@
+# First end-to-end check: coarse terrain, few samples.
+name: 00_prototype
+geometry:
+  type: terrain
+render:
+  samples: 16
+output:
+  dir: renders/prototype

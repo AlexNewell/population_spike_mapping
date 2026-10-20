@@ -1,0 +1,5 @@
+name: 24_quantile
+# Rank transform: height = percentile of density. Shows structure, discards magnitude.
+height:
+  transform: quantile
+  floor: 20

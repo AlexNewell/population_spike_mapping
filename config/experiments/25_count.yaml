@@ -1,0 +1,8 @@
+name: 25_count
+# People per 5 km cell instead of people per km2 of land: weights coastal cells by their actual population.
+height:
+  quantity: count
+  floor: 500
+geometry:
+  spikes:
+    min_value: 500

@@ -1,0 +1,7 @@
+name: 43_cam_southeast
+# Camera from the south-east, looking north-west: Atlantic seaboard in the foreground.
+render:
+  camera:
+    azimuth_deg: 25
+    elevation_deg: 22
+    shift_x: 0.06

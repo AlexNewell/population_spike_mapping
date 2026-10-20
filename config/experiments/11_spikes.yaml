@@ -1,0 +1,4 @@
+name: 11_spikes
+# Discrete square columns, 55% footprint, cells with >= 20 people/km2.
+geometry:
+  type: spikes

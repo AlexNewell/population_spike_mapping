@@ -1,0 +1,7 @@
+name: 70_final_spikes_5km
+# Finalist: square columns at 5 km, dusk light, gold.
+render:
+  light:
+    preset: dusk_south
+geometry:
+  max_height: 6.5

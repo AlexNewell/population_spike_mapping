@@ -1,0 +1,32 @@
+# --- Python / environments
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.env
+.env.*
+
+# --- Data and intermediates live outside the repo (~/popspike_data, or $POPSPIKE_DATA).
+# These patterns guard against accidentally copying them in.
+data/
+*.tif
+*.tiff
+*.npz
+*.npy
+*.zip
+*.part
+*.blend
+*.blend1
+
+# --- Generated renders: reproducible from config/ + code, and binary images bloat git history.
+# The showcase images are curated copies in docs/img/; full sets go in GitHub Releases.
+renders/
+
+# --- OS / editor / sync-client files
+.DS_Store
+Thumbs.db
+desktop.ini
+*.lnk
+.vscode/
+.idea/
+*.log

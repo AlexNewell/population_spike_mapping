@@ -1,0 +1,5 @@
+name: 21_power03
+# Cube-root-ish power: lifts mid-size cities, compresses NYC's dominance.
+height:
+  transform: power
+  power: 0.3

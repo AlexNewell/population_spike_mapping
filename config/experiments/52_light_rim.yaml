@@ -1,0 +1,4 @@
+name: 52_light_rim
+render:
+  light:
+    preset: rim

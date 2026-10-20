@@ -1,0 +1,6 @@
+name: 32_exag_high
+geometry:
+  max_height: 9.0
+render:
+  camera:
+    shift_y: 0.06

@@ -1,0 +1,4 @@
+name: 13_hybrid
+# Smoothed low-pass surface for rural/exurban areas + thin needles above 300 people/km2.
+geometry:
+  type: hybrid

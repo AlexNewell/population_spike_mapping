@@ -1,0 +1,265 @@
+{
+  "gold_navy": {
+    "background": "#05080f",
+    "ramp": [
+      [
+        0.0,
+        "#11131a"
+      ],
+      [
+        0.06,
+        "#4d3b1f"
+      ],
+      [
+        0.3,
+        "#b08640"
+      ],
+      [
+        0.65,
+        "#f0c66c"
+      ],
+      [
+        1.0,
+        "#fff5dc"
+      ]
+    ],
+    "emission": "#ffc965",
+    "emission_from": 0.3,
+    "emission_strength": 1.5,
+    "roughness": 0.45,
+    "metallic": 0.3,
+    "ocean": "#05080f",
+    "neighbor_dim": 0.6,
+    "neighbor_fade": 0.7
+  },
+  "ice_blue": {
+    "background": "#03050a",
+    "ramp": [
+      [
+        0.0,
+        "#0c121c"
+      ],
+      [
+        0.06,
+        "#173650"
+      ],
+      [
+        0.3,
+        "#3d86b8"
+      ],
+      [
+        0.65,
+        "#a6dbff"
+      ],
+      [
+        1.0,
+        "#ffffff"
+      ]
+    ],
+    "emission": "#9fd6ff",
+    "emission_from": 0.3,
+    "emission_strength": 1.5,
+    "roughness": 0.4,
+    "metallic": 0.1,
+    "ocean": "#03050a",
+    "neighbor_dim": 0.6,
+    "neighbor_fade": 0.7
+  },
+  "mono_white": {
+    "background": "#060607",
+    "ramp": [
+      [
+        0.0,
+        "#121214"
+      ],
+      [
+        0.06,
+        "#3c3c42"
+      ],
+      [
+        0.35,
+        "#a9a7a2"
+      ],
+      [
+        1.0,
+        "#ffffff"
+      ]
+    ],
+    "emission": "#ffffff",
+    "emission_from": 0.35,
+    "emission_strength": 1.0,
+    "roughness": 0.55,
+    "metallic": 0.0,
+    "ocean": "#060607",
+    "neighbor_dim": 0.6,
+    "neighbor_fade": 0.7
+  },
+  "navy_gold_gradient": {
+    "background": "#04070e",
+    "ramp": [
+      [
+        0.0,
+        "#0c1424"
+      ],
+      [
+        0.06,
+        "#1d4560"
+      ],
+      [
+        0.3,
+        "#4f8a8c"
+      ],
+      [
+        0.65,
+        "#e0b45c"
+      ],
+      [
+        1.0,
+        "#fff2cf"
+      ]
+    ],
+    "emission": "#ffd27a",
+    "emission_from": 0.3,
+    "emission_strength": 1.5,
+    "roughness": 0.45,
+    "metallic": 0.15,
+    "ocean": "#04070e",
+    "neighbor_dim": 0.6,
+    "neighbor_fade": 0.7
+  },
+  "gold_navy_bright_mids": {
+    "background": "#05080f",
+    "ramp": [
+      [
+        0.0,
+        "#11131a"
+      ],
+      [
+        0.06,
+        "#604a27"
+      ],
+      [
+        0.3,
+        "#dca850"
+      ],
+      [
+        0.65,
+        "#f0c66c"
+      ],
+      [
+        1.0,
+        "#fff5dc"
+      ]
+    ],
+    "emission": "#ffc965",
+    "emission_from": 0.3,
+    "emission_strength": 1.5,
+    "roughness": 0.45,
+    "metallic": 0.3,
+    "ocean": "#05080f",
+    "neighbor_dim": 0.6,
+    "neighbor_fade": 0.7
+  },
+  "gold_navy_tint1": {
+    "background": "#060b18",
+    "ramp": [
+      [
+        0.0,
+        "#11151f"
+      ],
+      [
+        0.06,
+        "#604a27"
+      ],
+      [
+        0.3,
+        "#dca850"
+      ],
+      [
+        0.65,
+        "#f0c66c"
+      ],
+      [
+        1.0,
+        "#fff5dc"
+      ]
+    ],
+    "emission": "#ffc965",
+    "emission_from": 0.3,
+    "emission_strength": 1.5,
+    "roughness": 0.45,
+    "metallic": 0.3,
+    "ocean": "#060b18",
+    "neighbor_dim": 0.6,
+    "neighbor_fade": 0.7,
+    "column_fog": "#05080f"
+  },
+  "gold_navy_tint2": {
+    "background": "#070d1e",
+    "ramp": [
+      [
+        0.0,
+        "#121624"
+      ],
+      [
+        0.06,
+        "#604a27"
+      ],
+      [
+        0.3,
+        "#dca850"
+      ],
+      [
+        0.65,
+        "#f0c66c"
+      ],
+      [
+        1.0,
+        "#fff5dc"
+      ]
+    ],
+    "emission": "#ffc965",
+    "emission_from": 0.3,
+    "emission_strength": 1.5,
+    "roughness": 0.45,
+    "metallic": 0.3,
+    "ocean": "#070d1e",
+    "neighbor_dim": 0.6,
+    "neighbor_fade": 0.7,
+    "column_fog": "#05080f"
+  },
+  "gold_navy_tint3": {
+    "background": "#080f24",
+    "ramp": [
+      [
+        0.0,
+        "#131828"
+      ],
+      [
+        0.06,
+        "#604a27"
+      ],
+      [
+        0.3,
+        "#dca850"
+      ],
+      [
+        0.65,
+        "#f0c66c"
+      ],
+      [
+        1.0,
+        "#fff5dc"
+      ]
+    ],
+    "emission": "#ffc965",
+    "emission_from": 0.3,
+    "emission_strength": 1.5,
+    "roughness": 0.45,
+    "metallic": 0.3,
+    "ocean": "#080f24",
+    "neighbor_dim": 0.6,
+    "neighbor_fade": 0.7,
+    "column_fog": "#05080f"
+  }
+}

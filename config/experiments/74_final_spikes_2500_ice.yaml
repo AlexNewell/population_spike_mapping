@@ -1,0 +1,10 @@
+name: 74_final_spikes_2500_ice
+# Finalist: as 71 in the ice-blue palette.
+grid:
+  resolution_m: 2500
+render:
+  palette: ice_blue
+  light:
+    preset: dusk_south
+geometry:
+  max_height: 6.5

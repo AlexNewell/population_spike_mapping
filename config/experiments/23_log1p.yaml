@@ -1,0 +1,5 @@
+name: 23_log1p
+# log(1 + density) with a 20/km2 floor: emphasises the settlement pattern over magnitude.
+height:
+  transform: log1p
+  floor: 20

@@ -1,0 +1,24 @@
+name: 44_northeast_corridor
+# Regional close-up: Washington -> Boston at 2.5 km, seen from over the Atlantic (camera to the south-east,
+# looking north-west) so the corridor runs left-to-right across the 4:1 frame.
+grid:
+  resolution_m: 2500
+height:
+  power: 0.75
+  neighbor_scale: 0.0
+geometry:
+  max_height: 1.35
+  spikes:
+    min_value: 50
+render:
+  light:
+    preset: dusk_south
+    strength: 7
+  camera:
+    target: [0.838, 0.36]
+    azimuth_deg: 52
+    elevation_deg: 24
+    distance: 14.5
+    shift_x: 0.0
+    shift_y: 0.04
+  fog_range: [0.9, 2.0]

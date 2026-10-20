@@ -1,0 +1,4 @@
+name: 20_linear
+# Height proportional to density. Honest but extreme: only the largest metros register.
+height:
+  transform: linear

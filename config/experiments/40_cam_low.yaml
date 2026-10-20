@@ -1,0 +1,8 @@
+name: 40_cam_low
+# Low, dramatic skyline view.
+render:
+  camera:
+    elevation_deg: 13
+    distance: 100
+    target: [0.52, 0.6]
+    shift_y: 0.08

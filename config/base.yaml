@@ -1,0 +1,99 @@
+# Base configuration. Experiment files in config/experiments/ are deep-merged on top of this.
+name: base
+
+data:
+  # All data and intermediate files (~900 MB raw) live OUTSIDE the repo to keep it small.
+  # Override with the POPSPIKE_DATA environment variable.
+  root: ~/popspike_data
+  raw_dir: raw
+  processed_dir: processed
+  work_dir: work            # per-experiment height bundles + 16-bit renders
+  sources:
+    worldpop:
+      # WorldPop 2020 global mosaic, unconstrained, ~1 km (30 arc-second), people per cell.
+      url: https://data.worldpop.org/GIS/Population/Global_2000_2020/2020/0_Mosaicked/ppp_2020_1km_Aggregated.tif
+      file: worldpop/ppp_2020_1km_Aggregated.tif
+    ne_countries:
+      url: https://naciscdn.org/naturalearth/10m/cultural/ne_10m_admin_0_countries.zip
+      file: naturalearth/ne_10m_admin_0_countries.zip
+    ne_states:
+      url: https://naciscdn.org/naturalearth/10m/cultural/ne_10m_admin_1_states_provinces.zip
+      file: naturalearth/ne_10m_admin_1_states_provinces.zip
+    ne_land:
+      url: https://naciscdn.org/naturalearth/10m/physical/ne_10m_land.zip
+      file: naturalearth/ne_10m_land.zip
+    ne_lakes:
+      url: https://naciscdn.org/naturalearth/10m/physical/ne_10m_lakes.zip
+      file: naturalearth/ne_10m_lakes.zip
+    census_states:
+      # Census Bureau state totals; ESTIMATESBASE2020 = April 1 2020 base built from the 2020 Census
+      # (the keyless replacement for the decennial API, which now requires a key)
+      url: https://www2.census.gov/programs-surveys/popest/datasets/2020-2024/state/totals/NST-EST2024-ALLDATA.csv
+      file: census/NST-EST2024-ALLDATA.csv
+  # Lon/lat window clipped out of the global mosaic (covers CONUS plus neighbor margins).
+  clip_bbox_lonlat: [-135.0, 12.0, -55.0, 58.0]
+
+grid:
+  crs: EPSG:5070            # USA Contiguous Albers Equal Area
+  resolution_m: 5000
+  # Analysis extent in EPSG:5070 metres [xmin, ymin, xmax, ymax].
+  extent: [-2800000, -400000, 2700000, 3600000]
+  land_supersample: 10      # land-fraction raster is rasterized at resolution/this
+  min_land_frac: 0.05       # cells with less land than this are treated as water
+  calibrate_to_census: true # rescale each US state's WorldPop pixels to its 2020 Census total
+  max_pixel_density: 100000 # clamp source pixels above this (people/km²); Manhattan peaks ~66k
+  density_land_floor: 0.3   # density denominator uses max(land_frac, this) to stop coastal blow-ups
+
+height:
+  quantity: density         # density (people / km² of land) | count (people per cell)
+  transform: power          # log1p | power | linear | quantile
+  power: 0.5
+  floor: 1.0                # values below this map to zero height
+  clip_percentile: null     # optional ceiling percentile for normalisation (null = true maximum)
+  smooth_sigma: 0.0         # gaussian sigma in cells, applied after transform (0 = none; ~1.5 for terrain)
+  neighbor_scale: 1.0       # multiply non-US heights (1.0 = true data; colour handles emphasis)
+  normalize: us             # us: the densest US cell (Manhattan) = 1.0, neighbours above it clip | all
+
+geometry:
+  type: spikes              # terrain | spikes | hybrid
+  map_width: 60.0           # Blender units spanning the extent width
+  max_height: 5.0           # Blender units for the normalised 1.0 height (vertical exaggeration)
+  base_height: 0.04         # land plinth thickness so the land silhouette reads
+  spikes:
+    min_value: 20.0         # only cells above this quantity become columns
+    footprint: 0.55         # fraction of cell width
+    taper: 1.0              # top width / bottom width (1 = prism, ~0.1 = needle)
+  hybrid:
+    surface_sigma: 2.5      # smoothing for the low-pass surface (cells)
+    surface_cap: 0.35       # surface height ceiling (fraction of max_height)
+    spike_min_value: 300.0  # density above which needles rise
+    spike_footprint: 0.35
+    spike_taper: 0.15
+
+render:
+  engine: CYCLES            # CYCLES | BLENDER_EEVEE_NEXT
+  device: GPU
+  samples: 32
+  width: 1584
+  height: 396
+  denoise: true
+  camera:
+    target: [0.52, 0.55]    # look-at point as fraction of extent (x, y)
+    azimuth_deg: -12        # 0 = camera due south looking north; negative = from the south-west
+    elevation_deg: 24
+    distance: 95.0
+    focal_mm: 50
+    shift_x: -0.1           # lens shift pushes the map right, leaving dark space on the left
+    shift_y: 0.03
+  light:
+    preset: raking_west     # raking_west | top_ao | rim | dusk_south
+    strength: 10.0
+    world: 3.0              # multiplier on the preset's sky fill
+  exposure: 1.5
+  sea: flat                 # flat (unlit, edges vanish) | lit (catches shadows)
+  palette: gold_navy        # see blender/palettes.json
+  fog: 0.85                 # 0..1 depth fade toward background
+  fog_range: [0.8, 1.3]     # fade starts/ends at these multiples of camera distance
+
+output:
+  dir: renders/experiments

@@ -1,0 +1,12 @@
+name: 72_final_needles_2500
+# Finalist: tapered needles at 2.5 km.
+grid:
+  resolution_m: 2500
+render:
+  light:
+    preset: dusk_south
+geometry:
+  max_height: 6.5
+  spikes:
+    footprint: 0.85
+    taper: 0.15

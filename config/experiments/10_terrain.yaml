@@ -1,0 +1,6 @@
+name: 10_terrain
+# Continuous terrain: smoothed surface, one vertex per 5 km cell.
+geometry:
+  type: terrain
+height:
+  smooth_sigma: 1.5

@@ -1,0 +1,7 @@
+name: 12_needles
+# Tapered needles (top 12% of base width): thinner, more 'Alasdair Rae'.
+geometry:
+  type: spikes
+  spikes:
+    footprint: 0.85
+    taper: 0.12

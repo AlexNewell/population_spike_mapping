@@ -1,0 +1,5 @@
+name: 22_power05
+# Square root (baseline).
+height:
+  transform: power
+  power: 0.5

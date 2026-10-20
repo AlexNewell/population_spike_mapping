@@ -1,0 +1,16 @@
+name: 73_final_hybrid_2500
+# Finalist: hybrid (smoothed surface + needles above 300/km2) at 2.5 km.
+grid:
+  resolution_m: 2500
+render:
+  light:
+    preset: dusk_south
+geometry:
+  type: hybrid
+  max_height: 6.5
+  hybrid:
+    surface_sigma: 4
+    surface_cap: 0.2
+    spike_min_value: 300
+    spike_footprint: 0.6
+    spike_taper: 0.2

@@ -1,0 +1,8 @@
+name: 42_cam_high
+# Higher, map-like view: geography most recognisable.
+render:
+  camera:
+    elevation_deg: 42
+    distance: 82
+    target: [0.52, 0.5]
+    shift_y: 0.0

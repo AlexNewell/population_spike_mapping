@@ -1,0 +1,29 @@
+name: 85_final_gold_navy_tint2
+# FINAL variant (navy tint 2/3): as 83 with a navy-tinted background, sea, fog and land floor; gold ramp unchanged.
+# Neighbours are shown as land silhouette only (no columns) to keep the focus on the US.
+grid:
+  resolution_m: 2500
+height:
+  transform: power
+  power: 0.68
+  neighbor_scale: 0.0
+geometry:
+  type: spikes
+  max_height: 7.0
+  spikes:
+    min_value: 50
+    footprint: 0.55
+render:
+  width: 3168
+  height: 792
+  samples: 256
+  palette: gold_navy_tint2
+  light:
+    preset: dusk_south
+    strength: 7
+  camera:
+    shift_x: -0.068
+    shift_y: 0.06
+  exposure: 1.7
+output:
+  dir: renders/final

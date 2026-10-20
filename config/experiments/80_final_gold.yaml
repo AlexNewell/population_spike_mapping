@@ -1,0 +1,29 @@
+name: 80_final_gold
+# FINAL. US-only square columns at 2.5 km, sqrt-ish power transform (p = 0.75), dusk light, gold.
+# Neighbours are shown as land silhouette only (no columns) to keep the focus on the US.
+grid:
+  resolution_m: 2500
+height:
+  transform: power
+  power: 0.75
+  neighbor_scale: 0.0
+geometry:
+  type: spikes
+  max_height: 7.0
+  spikes:
+    min_value: 50
+    footprint: 0.55
+render:
+  width: 3168
+  height: 792
+  samples: 256
+  palette: gold_navy
+  light:
+    preset: dusk_south
+    strength: 7
+  camera:
+    shift_x: -0.068
+    shift_y: 0.06
+  exposure: 1.7
+output:
+  dir: renders/final
