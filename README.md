@@ -2,6 +2,20 @@
 
 ![Final banner](docs/img/banner.png)
 
+## Description
+
+Population Spikes is a reproducible pipeline that turns gridded population data into a 3D "spike map" of the contiguous United States: tall columns where people are concentrated, flat land where they aren't. It is meant to make the extreme unevenness of where Americans live visible at a glance, in a wide banner format suited to a LinkedIn or web header.
+
+The project covers the whole path from raw data to finished image:
+
+1. **Data:** download WorldPop 2020 population counts, U.S. Census state totals and Natural Earth boundaries.
+2. **Processing:** clean, calibrate and re-grid the counts onto an equal-area 2.5 km grid, then convert them to density.
+3. **Rendering:** turn densities into column heights, build the mesh in Blender and render it with Cycles.
+
+Every image is defined by a YAML config, so any look (palette, camera, lighting, height transform) can be reproduced or varied from the command line. Methods and validation are documented in [docs/](docs/).
+
+### The banner
+
 Every column is a 2.5 km cell of the contiguous United States. Its height is proportional to population density (people/km² of land) raised to the power 0.68. That's 113,201 columns built from WorldPop 2020, calibrated to the 2020 Census state totals, projected to USA Contiguous Albers Equal Area and rendered in Blender Cycles. Canada, Mexico and the Caribbean appear as land silhouettes for context.
 
 **Alternate: Northeast Corridor close-up** (Washington to Boston, seen from over the Atlantic; [config](config/experiments/44_northeast_corridor.yaml)):
@@ -21,6 +35,12 @@ WorldPop 1 km counts ──► sanitize hot pixels ──► calibrate to Census
 - **Accurate:** after calibration the gridded CONUS total is within 0.6% of the Census, with a 0.6% mean state error. Population is conserved exactly through reprojection. All corrections are logged. See [docs/METHODS.md](docs/METHODS.md).
 - **Reproducible:** every image is defined by a YAML config, and the folder it renders into stores the merged config. Raw inputs are checksummed in a manifest.
 - **Explored:** 31 experiment configs cover geometry, transforms, exaggeration, camera, lighting and palette. Contact sheets and verdicts are in [docs/EXPERIMENTS.md](docs/EXPERIMENTS.md).
+
+## Requirements
+
+- Python 3.12 (as built; dependencies in [requirements.txt](requirements.txt); exact versions in [requirements.lock.txt](requirements.lock.txt))
+- [Blender](https://www.blender.org/) 4.2+
+- About 900 MB of disk for downloaded data (outside the repo); a GPU is optional
 
 ## Quick start (Windows, as built; any OS works)
 
